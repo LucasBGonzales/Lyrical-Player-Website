@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+	<header>
+        <meta charset="utf-8"/>
+        <title>
+			Lyrical Player
+        </title>
+		
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"/>
+	</header>
+
+   <body style="background-image: url({{session['imgResult']}});">
+   
+		<div class="content center_text">
+		
+			<table>
+				<tr>
+					<!-- Top User Queries -->
+					<td style="width:25%">
+						<p>
+							<span class="header_text">Popular User Queries </span>
+							<form action = "http://localhost:5000/query" method = "POST">
+								<button class="link_style" name="v_query" value="{{session['uq_1']}}">{{session['uq_1']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_2']}}">{{session['uq_2']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_3']}}">{{session['uq_3']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_4']}}">{{session['uq_4']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_5']}}">{{session['uq_5']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_6']}}">{{session['uq_6']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_7']}}">{{session['uq_7']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_8']}}">{{session['uq_8']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_9']}}">{{session['uq_9']}}</button>
+								<button class="link_style" name="v_query" value="{{session['uq_10']}}">{{session['uq_10']}}</button>
+							</form>
+						</p>
+					</td>
+					
+					
+					<!-- Image Label -->
+					<td style="width:50%">
+						<img class="title_image" src="{{url_for('static', filename='lyrical_player.png')}}" />
+						
+						<form action = "http://localhost:5000/query" method = "POST">
+							<p>
+								Search For an Artist and Song Below<br>
+								<input class="text_query" type="text" name="v_query"/>
+								<br>
+								<input class="submit_btn" type="submit" value="Submit" />
+							</p>
+						</form>
+					</td>
+					
+					
+					<!-- Top Spotify List -->
+					<td style="width:25%">
+						<p>
+							<span class="header_text">Top Spotify Songs</span>
+							<form action = "http://localhost:5000/query" method = "POST">
+								<button class="link_style" name="v_query" value="{{session['ts_1']}}">{{session['ts_1']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_2']}}">{{session['ts_2']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_3']}}">{{session['ts_3']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_4']}}">{{session['ts_4']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_5']}}">{{session['ts_5']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_6']}}">{{session['ts_6']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_7']}}">{{session['ts_7']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_8']}}">{{session['ts_8']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_9']}}">{{session['ts_9']}}</button>
+								<button class="link_style" name="v_query" value="{{session['ts_10']}}">{{session['ts_10']}}</button>
+							</form>
+						</p>
+					</td>
+				</tr>
+			</table>
+
+		
+			<p class="lyrics_header">Enter Lyrics Below</p>
+			<p class="sub_text">Click 'Submit Lyrics' When Finished</p>
+			
+			<form id="lyrics_form" action = "http://localhost:5000/submit_lyrics" method = "POST">
+				<textarea class="lyric_entry" name="txtLyrics" rows="10" cols="30" form="lyrics_form"></textarea><br>
+				<input class="submit_btn" name="btnSubmit" type="submit" value="Submit Lyrics"/>
+			</form>
+			
+		</div>
+   </body>
+</html>
