@@ -1,5 +1,6 @@
 # Lyrical-Player-Website
 CAPSTONE Final Project
+![Image of Website](https://i.imgur.com/1NaFh6K.png)
 
 ## Description
 This project was the final project for my Computing and Informatics degree. I worked on this in a team of me and two other classmates.
@@ -39,9 +40,6 @@ columns: songid[PRIMARY, INT], image_url[CHAR(128)]
 Table: spotifyTopList
 columns: rank[INT], songID[INT], updateTime[INT]
 ```
-
-## Other
-There is an image included in the repository that shows what the website looks like. 
 
 
 
